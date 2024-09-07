@@ -1,5 +1,4 @@
 name: CI Build
-
 on:
   push:
     branches:
@@ -11,8 +10,7 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
-    container:
-      image: python:3.9-slim
+    container: python:3.9-slim
 
     services:
       postgres:
@@ -29,13 +27,8 @@ jobs:
           --health-retries 5
 
     steps:
-      - name: Checkout code
+      - name: Checkout
         uses: actions/checkout@v2
-
-      - name: Set up Python 3.9
-        uses: actions/setup-python@v2
-        with:
-          python-version: 3.9
 
       - name: Install dependencies
         run: |
