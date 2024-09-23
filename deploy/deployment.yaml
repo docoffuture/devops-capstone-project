@@ -18,10 +18,9 @@ spec:
         app: accounts
     spec:
       containers:
-      - image: IMAGE_NAME_HERE
+      - image: IMAGE_NAME_HERE  # Placeholder for the image
         name: accounts
         resources: {}
-
         env:
           - name: DATABASE_HOST
             value: postgresql
